@@ -1,1 +1,28 @@
+<!doctype HTML>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    </head>
+    <script src="https://aframe.io/releases/0.9.2/aframe.min.js"></script>
+    <script src="https://raw.githack.com/jeromeetienne/AR.js/master/aframe/build/aframe-ar.min.js"></script>
+    <script src="https://raw.githack.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
+
+    <body style='margin : 0px; overflow: hidden;'>
+        <!-- we add detectionMode and matrixCodeType to tell AR.js to recognize barcode markers -->
+        <a-scene embedded arjs='sourceType: webcam; debugUIEnabled: false; detectionMode: mono_and_matrix; matrixCodeType: 4x4_BCH_13_5_5;'
+                 renderer="antialias: true; logarithmicDepthBuffer: true; colorManagement: true; sortObjects: true;">
+
+        <a-assets>
+            <a-asset-item id="cañon-RA" src="https://raw.githubusercontent.com/javrzz/2025/main/modelos/cañon-RA.glb"></a-asset-item>
+        </a-assets>
+
+        <a-marker id="animated-marker1" type='barcode' value='1'>
+           <a-entity gltf-model="#cañon-RA" scale="20 20 20"></a-entity>
+        </a-marker>
+
+
+        <a-entity camera></a-entity>
+        </a-scene>
+    </body>
+</html>
 
